@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.tsy.sample.myokhttp.MainActivity">
+    tools:context="com.bojan.sample.myokhttp.MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"

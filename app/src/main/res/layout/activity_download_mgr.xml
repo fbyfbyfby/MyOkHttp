@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="horizontal"
-    tools:context="com.tsy.sample.myokhttp.DownloadMgrActivity">
+    tools:context="com.bojan.sample.myokhttp.DownloadMgrActivity">
 
     <TextView
         android:layout_width="wrap_content"

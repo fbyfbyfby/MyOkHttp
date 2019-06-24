@@ -1,4 +1,4 @@
-package com.tsy.sample.myokhttp;
+package com.bojan.sample.myokhttp;
 
 import org.junit.Test;
 

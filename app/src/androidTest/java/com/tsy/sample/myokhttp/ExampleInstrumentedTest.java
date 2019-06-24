@@ -1,4 +1,4 @@
-package com.tsy.sample.myokhttp;
+package com.bojan.sample.myokhttp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.tsy.sample.myokhttp", appContext.getPackageName());
+        assertEquals("com.bojan.sample.myokhttp", appContext.getPackageName());
     }
 }

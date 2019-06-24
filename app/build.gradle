@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion '27.0.3'
     defaultConfig {
-        applicationId "com.tsy.sample.myokhttp"
+        applicationId "com.bojan.sample.myokhttp"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
@@ -31,5 +31,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     implementation project(":myokhttp")
-//    compile 'com.tsy:myokhttp:1.1.3'
+
 }

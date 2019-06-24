@@ -1,4 +1,4 @@
-package com.tsy.sdk.myokhttp;
+package com.bojan.sdk.myokhttp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

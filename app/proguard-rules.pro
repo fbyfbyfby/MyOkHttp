@@ -17,8 +17,8 @@
 #}
 
 #myokhttp
--dontwarn com.tsy.sdk.myokhttp.**
--keep class com.tsy.sdk.myokhttp.**{*;}
+-dontwarn com.bojan.sdk.myokhttp.**
+-keep class com.bojan.sdk.myokhttp.**{*;}
 
 #okhttp
 -dontwarn okhttp3.**
@@ -38,4 +38,4 @@
 -keep class * implements com.google.gson.JsonDeserializer
 
 #实体类不参与混淆
--keep class com.tsy.sample.myokhttp.UploadModel{*;}
+-keep class com.bojan.sample.myokhttp.UploadModel{*;}
