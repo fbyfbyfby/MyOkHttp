@@ -21,13 +21,31 @@ import okhttp3.OkHttpClient;
  */
 public class MyOkHttp {
     private volatile static MyOkHttp mInstance;
+    private OkHttpClient mOkHttpProxyClient;
+    private boolean isEnableProxy = false;
     private OkHttpClient mOkHttpClient;
     public static Handler mHandler = new Handler(Looper.getMainLooper());
     public static String BASE_URL = "http://vonlink.com/";
 
     public OkHttpClient getOkHttpClient() {
-        return mOkHttpClient;
+        if (isEnableProxy) {
+            return mOkHttpProxyClient == null ? mOkHttpClient : mOkHttpProxyClient;
+        } else {
+            return mOkHttpClient;
+        }
     }
+
+    public void setOkHttpProxy(OkHttpClient okHttpClient) {
+        if (okHttpClient != null) {
+            isEnableProxy = true;
+            this.mOkHttpProxyClient = okHttpClient;
+        }
+    }
+
+    public void setEnableProxy(boolean enableProxy) {
+        isEnableProxy = enableProxy;
+    }
+
     public static String getBaseUrl() {
         return BASE_URL;
     }
@@ -35,6 +53,7 @@ public class MyOkHttp {
     public static void setBaseUrl(String baseUrl) {
         BASE_URL = baseUrl;
     }
+
     /**
      * construct
      */
