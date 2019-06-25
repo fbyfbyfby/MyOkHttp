@@ -20,28 +20,35 @@ import okhttp3.OkHttpClient;
  * Created by tsy on 16/9/14.
  */
 public class MyOkHttp {
-    private static OkHttpClient mOkHttpClient;
+    private volatile static MyOkHttp mInstance;
+    private OkHttpClient mOkHttpClient;
     public static Handler mHandler = new Handler(Looper.getMainLooper());
+    public static String BASE_URL = "http://vonlink.com/";
 
     public OkHttpClient getOkHttpClient() {
         return mOkHttpClient;
     }
+    public static String getBaseUrl() {
+        return BASE_URL;
+    }
 
+    public static void setBaseUrl(String baseUrl) {
+        BASE_URL = baseUrl;
+    }
     /**
      * construct
      */
-    public MyOkHttp()
-    {
+    public MyOkHttp() {
         this(null);
     }
 
     /**
      * construct
+     *
      * @param okHttpClient custom okhttpclient
      */
-    public MyOkHttp(OkHttpClient okHttpClient)
-    {
-        if(mOkHttpClient == null) {
+    public MyOkHttp(OkHttpClient okHttpClient) {
+        if (mOkHttpClient == null) {
             synchronized (MyOkHttp.class) {
                 if (mOkHttpClient == null) {
                     if (okHttpClient == null) {
@@ -54,6 +61,21 @@ public class MyOkHttp {
         }
     }
 
+    public static MyOkHttp initClient(OkHttpClient okHttpClient) {
+        if (mInstance == null) {
+            synchronized (MyOkHttp.class) {
+                if (mInstance == null) {
+                    mInstance = new MyOkHttp(okHttpClient);
+                }
+            }
+        }
+        return mInstance;
+    }
+
+    public static MyOkHttp getInstance() {
+        return initClient(null);
+    }
+
     public GetBuilder get() {
         return new GetBuilder(this);
     }
@@ -62,15 +84,15 @@ public class MyOkHttp {
         return new PostBuilder(this);
     }
 
-    public PutBuilder put(){
+    public PutBuilder put() {
         return new PutBuilder(this);
     }
 
-    public PatchBuilder patch(){
+    public PatchBuilder patch() {
         return new PatchBuilder(this);
     }
 
-    public DeleteBuilder delete(){
+    public DeleteBuilder delete() {
         return new DeleteBuilder(this);
     }
 
@@ -84,6 +106,7 @@ public class MyOkHttp {
 
     /**
      * do cacel by tag
+     *
      * @param tag tag
      */
     public void cancel(Object tag) {

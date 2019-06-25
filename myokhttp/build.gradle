@@ -38,7 +38,7 @@ publish {
     userOrg = 'fbyfbyfby1'      //bintray注册的用户名
     groupId = 'com.bojan'         //compile引用时的第1部分groupId
     artifactId = 'myokhttp'     //compile引用时的第2部分项目名
-    publishVersion = '1.1.0'    //compile引用时的第3部分版本号
+    publishVersion = '1.1.2'    //compile引用时的第3部分版本号
     desc = 'This is a okhttp3 extend library'
     website = 'https://github.com/fbyfbyfby/MyOkHttp'
 
