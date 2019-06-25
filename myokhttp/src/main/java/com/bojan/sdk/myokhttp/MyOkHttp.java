@@ -76,32 +76,32 @@ public class MyOkHttp {
         return initClient(null);
     }
 
-    public GetBuilder get() {
-        return new GetBuilder(this);
+    public static GetBuilder get() {
+        return new GetBuilder(getInstance());
     }
 
-    public PostBuilder post() {
-        return new PostBuilder(this);
+    public static PostBuilder post() {
+        return new PostBuilder(getInstance());
     }
 
-    public PutBuilder put() {
-        return new PutBuilder(this);
+    public static PutBuilder put() {
+        return new PutBuilder(getInstance());
     }
 
-    public PatchBuilder patch() {
-        return new PatchBuilder(this);
+    public static PatchBuilder patch() {
+        return new PatchBuilder(getInstance());
     }
 
-    public DeleteBuilder delete() {
-        return new DeleteBuilder(this);
+    public static DeleteBuilder delete() {
+        return new DeleteBuilder(getInstance());
     }
 
-    public UploadBuilder upload() {
-        return new UploadBuilder(this);
+    public static UploadBuilder upload() {
+        return new UploadBuilder(getInstance());
     }
 
-    public DownloadBuilder download() {
-        return new DownloadBuilder(this);
+    public static DownloadBuilder download() {
+        return new DownloadBuilder(getInstance());
     }
 
     /**
